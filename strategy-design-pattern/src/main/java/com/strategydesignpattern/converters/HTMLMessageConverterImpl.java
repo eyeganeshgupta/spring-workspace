@@ -1,6 +1,6 @@
 package com.strategydesignpattern.converters;
 
-public class HTMLMessageConverterImpl implements IMessageConverter {
+final public class HTMLMessageConverterImpl implements IMessageConverter {
 
 	@Override
 	public String convert(String message) {
