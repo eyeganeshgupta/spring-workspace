@@ -2,6 +2,7 @@ package com.strategydesignpattern.beans;
 
 import com.strategydesignpattern.converters.HTMLMessageConverterImpl;
 import com.strategydesignpattern.converters.IMessageConverter;
+import com.strategydesignpattern.converters.PDFMessageConverterImpl;
 
 public class MessageWriter {
 	private IMessageConverter messageConverter;
@@ -9,7 +10,7 @@ public class MessageWriter {
 	public void writeMessage(String message) {
 		String convertedMessage = null;
 
-		messageConverter = new HTMLMessageConverterImpl();
+		messageConverter = new PDFMessageConverterImpl();
 		convertedMessage = messageConverter.convert(message);
 
 		System.out.println(convertedMessage);
