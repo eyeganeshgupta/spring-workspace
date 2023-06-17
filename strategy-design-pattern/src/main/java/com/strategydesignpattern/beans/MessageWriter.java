@@ -1,8 +1,7 @@
 package com.strategydesignpattern.beans;
 
-import com.strategydesignpattern.converters.HTMLMessageConverterImpl;
 import com.strategydesignpattern.converters.IMessageConverter;
-import com.strategydesignpattern.converters.PDFMessageConverterImpl;
+import com.strategydesignpattern.helper.MessageConverterFactory;
 
 public class MessageWriter {
 	private IMessageConverter messageConverter;
@@ -10,7 +9,8 @@ public class MessageWriter {
 	public void writeMessage(String message) {
 		String convertedMessage = null;
 
-		messageConverter = new PDFMessageConverterImpl();
+		// dependency-pulling === going-and-getting-the-dependent-object-from-another-class
+		messageConverter = MessageConverterFactory.createMessageConverter("html");
 		convertedMessage = messageConverter.convert(message);
 
 		System.out.println(convertedMessage);
