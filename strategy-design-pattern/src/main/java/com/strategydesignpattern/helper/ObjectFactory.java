@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ObjectFactory {
+	@SuppressWarnings("deprecation")
 	public static Object createObject(String logicalClassName) throws Exception {
 		Properties props = null;
 		InputStream in = null;
@@ -14,6 +15,8 @@ public class ObjectFactory {
 		props = new Properties();
 		in = ObjectFactory.class.getClassLoader()
 				.getResourceAsStream("com/strategydesignpattern/common/appClasses.properties");
+
+		props.load(in);
 
 		if (!props.containsKey(logicalClassName)) {
 			throw new Exception(
