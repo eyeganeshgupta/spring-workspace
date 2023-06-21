@@ -13,6 +13,8 @@ public class DependencyInjectionTest {
 				new ClassPathResource("core/dependencyinjection/common/application-context.xml"));
 
 		MessageWriter messageWriter = (MessageWriter) beanFactory.getBean("messageWriter");
+
+		messageWriter.writeMessage("Dependency Injection");
 	}
 
 }
