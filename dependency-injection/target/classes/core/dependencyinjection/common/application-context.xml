@@ -4,7 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="messageWriter"
-		class="core.dependencyinjection.beans.MessageWriter" />
+		class="core.dependencyinjection.beans.MessageWriter">
+	</bean>
 
 	<bean id="htmlMessageConverter"
 		class="core.dependencyinjection.converters.HTMLMessageConverterImpl" />
