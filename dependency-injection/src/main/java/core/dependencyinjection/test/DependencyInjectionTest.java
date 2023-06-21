@@ -1,11 +1,13 @@
 package core.dependencyinjection.test;
 
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+
 import org.springframework.core.io.ClassPathResource;
 
 import core.dependencyinjection.beans.MessageWriter;
-import core.dependencyinjection.converters.IMessageConverter;
 
+@SuppressWarnings("deprecation")
 public class DependencyInjectionTest {
 
 	public static void main(String[] args) {
