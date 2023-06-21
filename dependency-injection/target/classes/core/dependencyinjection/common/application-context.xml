@@ -5,6 +5,7 @@
 
 	<bean id="messageWriter"
 		class="core.dependencyinjection.beans.MessageWriter">
+		<property name="messageConverter" ref="htmlMessageConverter"></property>
 	</bean>
 
 	<bean id="htmlMessageConverter"
